@@ -1,5 +1,5 @@
 import QtQuick 2.7
-import org.kde.plasma.components 2.0 as PlasmaComponents // for Highlight and DialogStatus.Closed (used with Menu and MenuItem)
+import org.kde.plasma.components 2.0 as PlasmaComponents // for Highlight
 
 ListView {
     anchors.fill: parent
@@ -15,11 +15,9 @@ ListView {
     }
 
     function activate(index) {
-        if (typeof contextMenu !== "undefined"
-                && contextMenu.status !== PlasmaComponents.DialogStatus.Closed) {
-            return
+        if (typeof contextMenu === "undefined") {
+            currentIndex = index
         }
-        currentIndex = index
     }
 
     function clickCurrentItemButton(buttonName) {
@@ -49,6 +47,6 @@ ListView {
         if (typeof contextMenu.init !== "undefined") {
             contextMenu.init(item)
         }
-        contextMenu.open(x, y)
+        contextMenu.popup()
     }
 }
