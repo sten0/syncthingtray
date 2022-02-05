@@ -53,6 +53,7 @@ namespace Plasmoid {
 
 SyncthingApplet::SyncthingApplet(QObject *parent, const QVariantList &data)
     : Applet(parent, data)
+    , m_faUrl(QStringLiteral("image://fa/"))
     , m_palette(m_theme.palette())
     , m_iconManager(IconManager::instance(&m_palette))
     , m_aboutDlg(nullptr)
@@ -540,10 +541,12 @@ void Plasmoid::SyncthingApplet::handleImageProviderDestroyed()
 
 void SyncthingApplet::handleThemeChanged()
 {
+    emit faUrlChanged(m_faUrl = QString());
     IconManager::instance().setPalette(m_theme.palette());
     if (m_imageProvider) {
         m_imageProvider->setDefaultColor(m_theme.color(Plasma::Theme::TextColor, Plasma::Theme::NormalColorGroup));
     }
+    //emit faUrlChanged(m_faUrl = QStringLiteral("image://fa/"));
 }
 
 #ifdef LIB_SYNCTHING_CONNECTOR_SUPPORT_SYSTEMD

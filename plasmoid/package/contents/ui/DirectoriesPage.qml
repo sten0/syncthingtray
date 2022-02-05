@@ -77,7 +77,7 @@ ColumnLayout {
                             }
                             TinyButton {
                                 id: errorsButton
-                                icon.source: "image://fa/exclamation-triangle"
+                                icon.source: plasmoid.nativeInterface.faUrl + "exclamation-triangle"
                                 tooltip: qsTr("Show errors")
                                 visible: pullErrorCount > 0
                                 onClicked: {
@@ -88,7 +88,7 @@ ColumnLayout {
                             }
                             TinyButton {
                                 id: rescanButton
-                                icon.source: "image://fa/refresh"
+                                icon.source: plasmoid.nativeInterface.faUrl + "refresh"
                                 tooltip: qsTr("Rescan")
                                 enabled: !paused
                                 onClicked: plasmoid.nativeInterface.connection.rescan(
