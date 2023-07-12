@@ -249,8 +249,9 @@ See the release section on GitHub.
         * `syncthingfileitemaction`: Dolphin/KIO integration
         * `syncthingctl`: command-line interface
 * Debian 12 "bookworm" and its derivatives (Ubuntu, Pop!_OS, Neon, etc.)
-    * `sudo apt install syncthingtray-kde-plasma` if using KDE Plasma;
-      otherwise, `sudo apt install syncthingtray`.  Please test installation from a Software Centre such as [GNOME Software](https://apps.gnome.org/en-GB/app/org.gnome.Software) or [Discover](https://apps.kde.org/en-gb/discover/).
+    * First, see if these new software centre links work:  [Syncthingtray for KDE Plasma](apt://syncthingtray-kde-plasma), or [Syncthingtray for other desktops](apt://syncthingtray).
+    * If those links don't work, then try `sudo apt install syncthingtray-kde-plasma` if using KDE Plasma;
+      otherwise, `sudo apt install syncthingtray`.
     * [backport](https://backports.debian.org/) to Debian 11 "bullseye" available on request.
 * Exherbo
     * packages for my other project "Tag Editor" and dependencies could serve as a base and are provided
